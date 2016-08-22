@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src='//code.jquery.com/jquery-1.7.2.min.js'></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <style>
+    h1 {
+        font-size: 48px;
+    }
+    </style>
+</head>
+
+<body>
+<!--     <button>hellooooooo</button> -->
+    <h1 id='hammock'></h1>
+    <h1 id='couch'></h1>
+    <h1 id='mens'></h1>
+    <h1 id='croom'></h1>
+
+    <script>
+      var socket = io();
+
+      var topics = [
+        { id: 'hammock' },
+        { id: 'couch' },
+        { id: 'mens' },
+        { id: 'croom' },
+      ];
+
+      // var button = document.querySelector('button');
+      // button.addEventListener('click', function() {
+      //   socket.emit('chat message', 'hello');
+      // });
+
+      // set all topics
+      topics.forEach(function(topic) {
+        var id = topic.id;
+        // set DOM element
+        var el = topic.el = document.getElementById(id);
+        // subscribe
+        var channel = topic.channel = 'topic:' + id;
+        socket.on(channel, function(availability){
+          // console.log(channel, availability);
+          // store
+          topic.availability = availability;
+          // show availability into element
+          el.innerHTML = id + ': ' + availability;
+        });
+      });
+      console.log(topics);
+
+      // request all topics available
+      socket.emit('request all topics available');
+
+    </script>
+</body>
+
+</html>

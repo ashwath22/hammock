@@ -1,0 +1,16 @@
+{
+"name": "hammock",
+"description": "hammock",
+"version": "1.0.0",
+"manifest_version": 2,
+"chrome_url_overrides":{
+"newtab": "index.html"  
+},
+"content_scripts": [
+   {
+     "matches": ["http://mqtt_ws/index.html"],
+     "js": ["index.js","package.json"]
+   }
+ ]
+}
+
