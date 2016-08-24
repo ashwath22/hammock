@@ -1,60 +1,134 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Hammock</title>
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+	   <meta name="mobile-web-app-capable" content="yes">
+        <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png" />
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 
-<head>
-    <script src='//code.jquery.com/jquery-1.7.2.min.js'></script>
-    <script src="/socket.io/socket.io.js"></script>
+        <!-- <script src="/socket.io/socket.io.js"></script> -->
+        <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src='//code.jquery.com/jquery-1.7.2.min.js'></script>
+        <script src="/js/script.js"></script>
+        <script src="/js/jquery.fullPage.js"></script>
 
-    <style>
-    h1 {
-        font-size: 48px;
-    }
-    </style>
-</head>
 
-<body>
-<!--     <button>hellooooooo</button> -->
-    <h1 id='hammock'></h1>
-    <h1 id='couch'></h1>
-    <h1 id='mens'></h1>
-    <h1 id='croom'></h1>
+    </head>
+    <body>
+        
+        <!-- <div class="splashPage">
+            <div class="splashCircle"></div>
+            <img src="css/img/IO.svg" class="IO">
+        
+        </div> -->
+        
+        <div class="nav">
+                <div class="topShell"></div>
+                <div class="bottomShell"></div>
+            <div class="pulseParent">
+                <div class="radialPulse01"></div>
+                <div class="radialPulse02"></div>
+                <div class="radialPulse03"></div>
+            </div>
+        </div>
+        
+        <div id="fullpage">
+            
+            <div class="section">
+                <div class="slide upstairsToiletBG">
+                    <h1 class="objectTitle toiletTitle">TOI<br>LE<br>T</h1>
+                    <img src="css/img/upstairstoilet.png" class="upstairsToilet">
+                </div>
+                <div class="slide pingPongBG"> 
+                    <h1 class="objectTitle pingpongTitle">PIN<br>GPO<br>NG</h1>
+                    <img src="css/img/pingpong.png" class="pingPong">
+                </div>
+                <div class="slide upstairsCouchBG"> 
+                    <h1 class="objectTitle couchTitle">COU<br>CH</h1>
+                    <img src="css/img/couch.png" class="upstairsCouch">
+                </div>
+                <div class="slide workshopBG">
+                    <h1 class="objectTitle workshopTitle">WOR<br>KSH<br>OP</h1>
+                    <img src="css/img/workshop.png" class="workshop">
+                </div>
+            </div>
+            <div class="section">
+                <div class="slide womensToiletBG"> 
+                    <h1 class="objectTitle womensTitle">WOM<br>EN<br>S</h1>
+                     <img src="css/img/womensToilet-nofill.png" class="no-fill">
+                    
+                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74.88 181.05">
+                      <defs>
+                        <style>
+                          .path {
+                            fill: none;
+                            stroke: #fff;
+                            stroke-linecap: round;
+                            stroke-miterlimit: 10;
+                            stroke-width: 6px;
+                          }
+                        </style>
+                      </defs>
+                      <title>womenstoilet</title>
+                      <g>
+                        <path class="path" d="M84.3,132.73H97.56c2.83,0,4.75-2.21,3.69-4.22L69.79,58.6a2.28,2.28,0,0,0-2.08-1.34H59.45a2.28,2.28,0,0,0-2.08,1.34L32.66,112.84" transform="translate(-29.66 -3.57)"/>
+                        <path class="path" d="M43.38,147.71V175.2a6.35,6.35,0,0,0,4.52,6.2,6.23,6.23,0,0,0,7.89-6V133.24a0.51,0.51,0,0,1,.51-0.51H70.86a0.51,0.51,0,0,1,.51.51v42a6.35,6.35,0,0,0,4.52,6.2,6.23,6.23,0,0,0,7.89-6V133.24a0.51,0.51,0,0,1,.51-0.51" transform="translate(-29.66 -3.57)"/>
+                        <path class="path" d="M63.38,47.35a20.38,20.38,0,1,0-16.9-9" transform="translate(-29.66 -3.57)"/>
+                      </g>
+                    </svg>
 
-    <script>
-      var socket = io();
-
-      var topics = [
-        { id: 'hammock' },
-        { id: 'couch' },
-        { id: 'mens' },
-        { id: 'croom' },
-      ];
-
-      // var button = document.querySelector('button');
-      // button.addEventListener('click', function() {
-      //   socket.emit('chat message', 'hello');
-      // });
-
-      // set all topics
-      topics.forEach(function(topic) {
-        var id = topic.id;
-        // set DOM element
-        var el = topic.el = document.getElementById(id);
-        // subscribe
-        var channel = topic.channel = 'topic:' + id;
-        socket.on(channel, function(availability){
-          // console.log(channel, availability);
-          // store
-          topic.availability = availability;
-          // show availability into element
-          el.innerHTML = id + ': ' + availability;
+                    
+                </div>
+                <div class="slide mensToiletBG"> 
+                    <h1 class="objectTitle mensTitle">MEN<br>S</h1>
+                    <img src="css/img/menstoilet.png" class="mensToilet">
+                </div>
+                <div class="slide coffeeBG">
+                    <h1 class="objectTitle coffeeTitle">CO<br>FFE<br>E</h1>
+                    <img src="css/img/coffee.png" class="coffee">
+                </div>
+                <div class="slide lockBG">
+                    <h1 class="objectTitle lockedTitle">LO<br>CKE<br>D</h1>
+                    <img src="css/img/lock.png" class="lock">
+                </div>
+                <div class="slide downstairsCouchBG">
+                    <h1 class="objectTitle couchTitle">COU<br>CH</h1>
+                    <img src="css/img/couch.png" class="downstairsCouch">
+                </div>
+                <div class="slide hammockBG">
+                    <h1 class="objectTitle hammockTitle">HAM<br>MOC<br>K</h1>
+                    <img src="css/img/hammock.png" class="hammock">
+                </div>
+                <div class="slide toasterBG">
+                    <h1 class="objectTitle toasterTitle">TOA<br>STE<br>R</h1>
+                    <img src="css/img/toaster.png" class="toaster">
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="listpage">
+            <div class="toiletList"></div>
+            <div class="pingpongList"></div>
+            <div class="toiletList"></div>
+            <div class="pingpongList"></div>
+            <div class="toiletList"></div>
+            <div class="pingpongList"></div>
+            <div class="toiletList"></div>
+        </div>
+        
+        <script>
+        $(document).ready(function() {
+            $('#fullpage').fullpage();  
         });
-      });
-      console.log(topics);
-
-      // request all topics available
-      socket.emit('request all topics available');
-
-    </script>
-</body>
-
+        </script>
+    </body>
+    
 </html>

@@ -83,7 +83,7 @@ long duration, distance;
   }
 
   if (count == 100){
-    count=0;
+    count=1;
   }
   delay(200);
 }

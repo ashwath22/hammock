@@ -1,9 +1,11 @@
 var mqtt    = require('mqtt');
 var find    = require('lodash.find');
 var client  = mqtt.connect('mqtt://127.0.0.1');
+var express = require('express');
 var app = require('express')();
 var server = app.listen(3000);
 var io = require('socket.io')(server);
+// var express = require('express');
 
 var topics = [
 	{ id: 'hammock', availability: 0 },
@@ -12,10 +14,11 @@ var topics = [
 	{ id: 'croom', availability: 0 },
 ];
 
-
+app.use(express.static(__dirname + '/public'));
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
+
 
 io.on('connection', function(socket){
   console.log('a user connected');
