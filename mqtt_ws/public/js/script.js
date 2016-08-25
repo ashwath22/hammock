@@ -21,13 +21,40 @@ var socket = io();
           // show availability into element
           console.log(availability);
           // el.innerHTML = id + ': ' + availability;
-                if (availability == 4) {
+
+          // $.keyframe.define([{
+          //   name: 'dash',
+          //   '0%': {strokeDashoffset: 1000;},
+          //   '100%': {strokeDashoffset: 0;}
+          // }]);
+
+                if (availability === "1") {
             console.log("holla!!");
-            $('.upstairsToilet').css('visibility', 'hidden');
-        } 
-        else {
-          $('.upstairsToilet').css('visibility', 'hidden');
-        }
+            $('body').addClass('undo');
+          } else if (availability === "0") {
+            console.log("bye!!");
+            $('body').removeClass('undo');
+          }
+
+          if (availability === "2") {
+            console.log("holla!!");
+            $('body').addClass('undo');
+          } else if (availability === "0") {
+            console.log("bye!!");
+            $('body').removeClass('undo');
+          }
+
+      
+            // $('.path').playKeyframe({
+            //   name: 'dash',
+            //   duration: 2000
+
+            // });
+        //     $('.upstairsToilet').css('visibility', 'hidden');
+        // } 
+        // else {
+        //   $('.upstairsToilet').css('visibility', 'visible');
+        // }
   
         });
       });

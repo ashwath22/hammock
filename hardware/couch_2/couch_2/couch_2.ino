@@ -62,12 +62,13 @@ void loop() {
     Serial.println("button hit!!");
     digitalWrite(ledPin, LOW);
     Serial.println("light on");
-  //  delay(1000);
+    delay(1000);
   } else {
       // turn LED off:
       client.publish("couch", "0");
       digitalWrite(ledPin, HIGH);
       Serial.println("light off");
+      delay(1000);
   }
 
 }

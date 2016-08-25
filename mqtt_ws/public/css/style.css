@@ -371,25 +371,26 @@ h1 {
     top: calc(50vh - 173px);
 }
 
+/*.fp-viewing-1-0 .path {
+  animation: dash 3s linear alternate forwards;
+    animation-delay: 0.5s;
+
+}*/
+
 .fp-viewing-1-0 .path {
-  animation: dash 3s linear alternate forwards;
-    animation-delay: 0.5s;
-
 }
 
-.go {
-  animation: dash 3s linear alternate forwards;
-    animation-delay: 0.5s;
-
+.fp-viewing-1-0.undo .path {
+  animation: dash 0.9s linear reverse forwards;
 }
 
-.fp-viewing-0-0 .path {
-  animation: undo 0.8s linear alternate forwards;
+.fp-viewing-1-0 .path {
+  animation: showPath 0.9s linear alternate forwards;
 }
 
-.fp-viewing-1-1 .path {
-  animation: undo 0.2s linear alternate forwards;
-}
+/*.fp-viewing-1-0 .path {
+  animation: hello 0.8 linear alternate forwards;
+}*/
 
 .path {
     stroke-dasharray: 1000;
@@ -402,24 +403,33 @@ h1 {
     
 }
 
+@keyframes showPath {
+  0% {
+    stroke-dashoffset: -1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 
 @keyframes dash {
-  from {
+  0% {
     stroke-dashoffset: 1000;
   }
-  to {
+  100% {
     stroke-dashoffset: 0;
   }
 }
 
-@keyframes undo {
-  from {
+/*@keyframes hello {
+  0% {
     stroke-dashoffset: 0;
   }
-  to {
+  100% {
     stroke-dashoffset: 1000;
   }
-}
+}*/
 
 
 

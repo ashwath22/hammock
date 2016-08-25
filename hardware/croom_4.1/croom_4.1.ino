@@ -7,6 +7,7 @@ int calibrationTime = 30;
 int pirPin = 5;    //the digital pin connected to the PIRsensor's output
 int pirState = 0;
 int ledPin = D0;
+int toggle = 0;
 const char *ssid = "T-Mobile Broadband08";
 const char *pass = "21485008";
 
@@ -65,30 +66,21 @@ void loop() {
     connect();
   } 
 buttonState = digitalRead(buttonPin);
-pirState = digitalRead(pirPin);
 
-if (pirState == HIGH){
+pirState = digitalRead(pirPin);
+if (pirState == HIGH) {
     digitalWrite(ledPin, LOW);   //the led visualizes the sensors output pin state
     client.publish("croom", "4");
     Serial.println("motion detected!!");
     delay(1000);
-   } 
-if (pirState == LOW){       
+    pirState = digitalRead(pirPin);
+   }else {       
     digitalWrite(ledPin, HIGH);  //the led visualizes the sensors output pin stat
     client.publish("croom", "0");
-    Serial.println("motion ended");      //output
+    Serial.println("motion ended");
     delay(1000);
+    pirState = digitalRead(pirPin);
    }
-if (buttonState == HIGH) {
-
-  Serial.println("button hit!!");
-  client.publish("croom", "4");
-  
-}
-if (buttonState == LOW) {
-    client.publish("croom", "0");
-  }
-
 }
 
 void messageReceived(String topic, String payload, char * bytes, unsigned int length) {
