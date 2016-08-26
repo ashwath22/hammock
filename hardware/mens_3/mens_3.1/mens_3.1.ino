@@ -63,10 +63,10 @@ long duration, distance;
   digitalWrite(trigPin, LOW);
   duration = pulseIn(echoPin, HIGH);
   distance = (duration/2) / 29.1;
-//  Serial.print(distance);
-//  Serial.println(" cm");
+  Serial.print(distance);
+  Serial.println(" cm");
 
-  if (distance < 100){
+  if (distance < 30){
     count++;
     delay(3000);
   }
