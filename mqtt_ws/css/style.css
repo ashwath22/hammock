@@ -322,6 +322,7 @@
     line-height: 1;
 	letter-spacing: -0.4px;
 	color: #ffffff;
+    z-index: 0;
 }
     
   
@@ -337,51 +338,66 @@
     width: 150px;
     position: absolute;
     margin-left: calc(50vw - 80px);
-    margin-top: calc(-20px);
+    margin-top: calc(-120px);
+    margin-top: calc(-120px);
 }
 
 #Layer_2 {
-    height: 210px;
+    height: 211px;
     z-index: 2;
-/*    position: absolute;*/
-    left: calc(50vw - 100px);
-    top: calc(50vh - 105px);
+    position: absolute;
+    left: calc(50vw - 104px);
+    top: calc(50vh - 109px);
 }
 
 #Layer_3 {
     height: 100px;
     z-index: 2;
-/*    position: absolute;*/
-    left: calc(50vw - 100px);
-    top: calc(50vh - 105px);
+    position: absolute;
+    margin-left: calc(-110px);
+    margin-top: -51.9px;
 }
 
 #Layer_4 {
     height: 100px;
     z-index: 2;
-/*    position: absolute;*/
-/*    left: calc(50vw - 100px);*/
+    position: absolute;
+    margin-left: calc(-100px);
+    margin-top: -50px;
     
 }
 
 #Layer_5 {
-    height: 190px;
+    width: 94px;
     z-index: 2;
-/*    position: absolute;*/
-/*    left: calc(50vw - 100px);*/
-    
+    position: absolute;
+    margin-left: calc(-92px);
+    margin-top: -6px;
 }
     
-/*
 .upstairsToilet {
     width: 140px;
     height: auto;
     position: absolute;
-    margin-left: calc(31px);   
-    margin-top: calc(20px);
+    margin-left: calc(-2px);   
+    margin-top: calc(87px);
     
 }
-*/
+
+.no-fill {
+    left: calc(50vw - 68px);
+    top: calc(50vh - 173px);
+    z-index: 0;
+}
+
+.hammock {
+    position: absolute;
+    width: auto;
+    height: 95px;   
+    margin-left: calc(300vw - 34px);
+    margin-top: calc(123px);
+    z-index: 0;
+}
     
 .pingpongTitle {
     width: 200px;
@@ -397,15 +413,27 @@
 }
 
 .couchTitle{
+    position: absolute;
+    width: 200px;
+    margin-left: calc(50vw - 100px);
+    margin-top: calc(-82px);
+}
+
+.downstairsCouchTitle {
+    position: absolute;
     width: 200px;
     margin-left: calc(50vw - 100px);
     margin-top: calc(-30px);
 }
     
-.upstairsCouch {
-    width: 200px;
-    height: auto; 
-        
+.couch {
+    position: absolute;
+    width: auto;
+    height: 100px; 
+    margin-left: calc(200vw - 30px);   
+    margin-top: calc(122px);
+    z-index: 0;
+    
 }
     
 .downstairsCouch {
@@ -417,7 +445,7 @@
     width: 230px;
     margin-left: calc(50vw - 115px);
     opacity: 0.15;
-    margin-top: calc(-30px);
+    margin-top: calc(-50px);
 }
     
 .workshop {
@@ -478,24 +506,9 @@
 .hammockTitle {
     width: 210px;
     margin-left: calc(50vw - 105px);
-    margin-top: calc(-70px);
-}
-    
-.hammock {
-    width: 200px;
-    height: auto;      
+    margin-top: calc(-120px);
 }
 
-.toasterTitle {
-    width: 200px;
-    margin-left: calc(50vw - 100px);
-    margin-top: calc(-40px);
-}
-    
-.toaster {
-    width: 140px;
-    height: auto;      
-}
     
 
 
@@ -514,12 +527,6 @@
 /*     ICON ANIMATIONS     */
 
 
-
-.no-fill {
-    position: absolute;
-    left: calc(50vw - 68px);
-    top: calc(50vh - 173px);
-}
 
 /* ----- Toilet ----- */
 
@@ -600,7 +607,6 @@
     stroke-linecap: round;
     stroke-miterlimit: 10;
     stroke-width: 6px;
-    
 }
 
 @keyframes showPath {
@@ -638,27 +644,27 @@
 /* -- Icon BG -- */
 
 .pingPongBG {
-    background-image: linear-gradient(to bottom, #f78b8b, #eb5353);
+    background-image: linear-gradient(to bottom, #F58989, #DB4646);
 }
 
 .upstairsToiletBG {
-    background-image: linear-gradient(to bottom, #59b9eb, #1a81b6);
+    background-image: linear-gradient(to bottom, #6DCEFF, #197BAD);
 }
 
 .upstairsCouchBG {
-    background-image: linear-gradient(to bottom, #bf6fd9, #7d0ea2);
+    background-image: linear-gradient(to bottom, #D47FF0, #7d0ea2);
 }
 
 .womensToiletBG {
-    background-image: linear-gradient(to bottom, #ee699e, #be326a);
+    background-image: linear-gradient(to bottom, #FF77AD, #B72B63);
 }
 
 .mensToiletBG {
-    background-image: linear-gradient(to bottom, #3ba5a8, #006a6d);
+    background-image: linear-gradient(to bottom, #4EC9CC, #006a6d);
 }
 
 .coffeeBG {
-    background-image: linear-gradient(to bottom, #77bdef, #2e85c2);
+    background-image: linear-gradient(to bottom, #7DC3F4, #297DB9);
 }
 
 .toasterBG {
@@ -666,19 +672,19 @@
 }
 
 .lockBG {
-    background-image: linear-gradient(to bottom, #5bced0, #00aaac);
+    background-image: linear-gradient(to bottom, #67DCDE, #039799);
 }
 
 .downstairsCouchBG {
-    background-image: linear-gradient(to bottom, #ee8451, #cc4300);
+    background-image: linear-gradient(to bottom, #FD9B6C, #cc4300);
 }
 
 .hammockBG {
-    background-image: linear-gradient(to bottom, #a453e8, #6c00c7);
+    background-image: linear-gradient(to bottom, #C075FF, #6c00c7);
 }
 
 .workshopBG {
-    background-image: linear-gradient(to bottom, #f6e259, #ccb200);
+    background-image: linear-gradient(to bottom, #F8C17C, #D48623);
 }
 
 
@@ -864,6 +870,49 @@
     animation-delay: 8s;
 }
 
+/*   TOILET    */    
+    
+#Layer_2 {
+    width: 465px;
+    height: auto;
+    z-index: 2;
+    position: absolute;
+    left: calc(50vw - 218px);
+    top: calc(50vh - 223px);
+}
+    
+/*   HAMMOCK    */    
+    
+#Layer_3 {
+    height: 200px;
+    z-index: 2;
+    position: absolute;
+    margin-left: calc(-225px);
+    margin-top: -104px;
+}
+
+/*   COUCH    */
+    
+#Layer_4 {
+    height: 200px;
+    z-index: 2;
+    position: absolute;
+    margin-left: calc(-190px);
+    margin-top: -97px;
+    
+}
+
+/*   WORKSHOP    */    
+    
+#Layer_5 {
+    width: 200px;
+    z-index: 2;
+    position: absolute;
+    margin-left: calc(-45px);
+    margin-top: -12px;
+}    
+    
+    
 .objectTitle {
     margin-left: calc(50vw - 220px);
     margin-top: calc(-100px);
@@ -883,14 +932,14 @@
 .toiletTitle{
     width: 150px;
     position: absolute;
-    margin-left: calc(50vw - 75px);
-    margin-top: calc(-115px);
+    margin-left: calc(50vw - 165px);
+    margin-top: calc(-265px);
 }
 
 
 .couchTitle{
     height: 360px;
-    margin-top: calc(-80px);
+    margin-top: calc(-170px);
 }
 
 .workshopTitle{
@@ -902,7 +951,20 @@
 .womensTitle{
     width: 530px;
     margin-left: calc(50vw - 265px);
-    margin-top: calc(-275px);
+    margin-top: calc(-105px);
+}
+    
+.womensToilet {
+    width: 160px;
+    height: auto;
+        
+}
+    
+.downstairsCouch {
+    width: 400px;
+    height: auto;
+    margin-top: calc(-20px);
+        
 }
 
 .mensTitle{
@@ -928,7 +990,7 @@
 .hammockTitle {
     width: 470px;
     margin-left: calc(50vw - 235px);
-    margin-top: calc(-190px);
+    margin-top: calc(-275px);
 }
 
 .toasterTitle {
@@ -940,6 +1002,8 @@
 .upstairsToilet {
     width: 314px;
     height: auto;
+    margin-left: calc(-75px);
+    margin-top: calc(-0px);
 }
     
 .pingPong {
@@ -949,10 +1013,20 @@
     
 }
     
-.upstairsCouch, .downstairsCouch {
+.upstairsCouch {
     width: 388px;
     height: auto; 
         
+}
+    
+.couch {
+    position: absolute;
+    width: 388px;
+    height: auto; 
+    margin-left: calc(200vw - 125px);   
+    margin-top: calc(75px);
+    z-index: 0;
+    
 }
     
 .workshop {
@@ -966,7 +1040,7 @@
 }
     
 .coffee {
-    width: 164px;
+    width: 190px;
     height: auto;
         
 }
@@ -978,8 +1052,12 @@
 }
     
 .hammock {
-    width: 398px;
-    height: auto;      
+    position: absolute;
+    width: 410px;
+    height: auto;    
+    margin-left: calc(300vw - 140px);   
+    margin-top: calc(75px);
+    z-index: 0;
 }
     
 .toaster {

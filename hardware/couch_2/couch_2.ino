@@ -1,7 +1,7 @@
 #include <ESP8266WiFi.h>
 #include <MQTTClient.h>
 
-const int buttonPin = 4;     // the number of the pushbutton pin
+int buttonPin = 4;     // the number of the pushbutton pin
 int buttonState = 0;         // variable for reading the pushbutton status
 int ledPin =  D0;  
 
@@ -62,12 +62,13 @@ void loop() {
     Serial.println("button hit!!");
     digitalWrite(ledPin, LOW);
     Serial.println("light on");
-  //  delay(1000);
+    delay(1000);
   } else {
       // turn LED off:
       client.publish("couch", "0");
       digitalWrite(ledPin, HIGH);
       Serial.println("light off");
+      delay(1000);
   }
 
 }
