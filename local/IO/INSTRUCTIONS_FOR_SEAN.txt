@@ -1,0 +1,14 @@
+Step 1 - Get to the Hammock-web folder
+cd ~/Documents/Hammock/Hammock-web
+
+Step 2 - Start SimpleHTTPServer
+python -m SimpleHTTPServer 8000
+
+Step 3 - Open another finder window
+Command + t
+
+Step 4 - Start ngrok
+./ngrok http 8000
+
+Step 5 - PARTY
+********* PARTY ************
